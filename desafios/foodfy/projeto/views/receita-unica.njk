@@ -1,0 +1,68 @@
+{% extends "head-foot.njk" %}
+
+{% block title %}
+    <title>Receita - {{receita.title}}}</title>
+{% endblock title %}
+
+
+{% block section %}
+    <section>
+        <div class="section-unica">
+            <div>
+                <img src="{{ receita.image }}" alt="{{ receita.title }}">
+            </div>
+            <div class="sabor-autor">
+                <h3 class="sabor">{{ receita.title }}</h3>
+                <p class="autor">por {{ receita.author }}</p>
+            </div>
+        </div>
+    </section>
+{% endblock section %}
+
+
+{% block content %}
+
+    <main>
+
+        <div class="receita-unica">
+
+            <article class="ingredientes">
+                <div class="title4">
+                    <h4>Ingredientes</h4>
+                    <button type="reset" class="btn-esconder">ESCONDER</button>
+                </div>
+                <ul>
+                    {% for ingrediente in receita.ingredients %}
+                        <li>{{ingrediente}}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+
+            <article class="modo_preparo">
+                <div class="title4">
+                    <h4>Modo de preparo</h4>
+                    <button type="reset" class="btn-esconder">ESCONDER</button>
+                </div>
+                <ul >
+                    {% for etapa in receita.preparation %}
+                        <li>{{etapa}}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+
+            <article class="informacoes_adicionais">
+                <div class="title4">
+                    <h4>Informações adicionais</h4>
+                    <button type="reset" class="btn-esconder">ESCONDER</button>
+                </div>
+                <p >{{receita.information}}</p>
+            </article>
+        </div>
+    </main>
+
+{% endblock content %}
+
+
+{% block script %}
+        <script src="/scripts.js"></script>
+{% endblock script %}

@@ -1,0 +1,38 @@
+{% extends "head-foot.njk" %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
+
+{% block section %}
+    <section>
+        <div class="section">
+            <div id="info-section">
+                <h2>As melhores receitas</h2>
+                <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+            </div>
+            <div id="imagem-section">
+                <img src="/chef.png" alt="Chefe">
+            </div>
+        </div>
+    </section>
+{% endblock section %}
+
+{% block content %}
+
+    <main>
+        <div id="mais_acessadas">
+            <h3>Mais acessadas</h3>
+        </div>
+        <div class="receita">
+            {% for receita in receitas %}
+                <article>
+                    <img src="{{receita.image}}" alt="Foto da receita de{{ receita.title }}">
+                    <p class="sabor">{{ receita.title }}</p>
+                    <p class="autor">{{ receita.author }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock content %}

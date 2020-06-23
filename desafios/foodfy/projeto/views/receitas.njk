@@ -1,0 +1,40 @@
+{% extends "head-foot.njk" %}
+
+{% block title %}
+    <title>Receitas</title>
+{% endblock title %}
+
+{% block links %}
+    <div class="links">
+        <a href="/sobre">Sobre</a>
+        <strong><a href="/receitas" id="receitas">Receitas</a></strong>
+    </div>
+{% endblock links %}
+    
+{% block content %}
+    <main>
+        <div id="mais_acessadas">
+        </div>
+        <div class="receita">
+
+            {% for receita in receitas %}
+                <article>
+                    <img src="{{receita.image}}" alt="Foto da receita de{{ receita.title }}" class="img-grid">
+                    <p class="sabor">{{ receita.title }}</p>
+                    <p class="autor">{{ receita.author }}</p>
+                </article>
+            {% endfor %}
+
+        </div>
+        
+    </main>
+{% endblock content %}
+
+{% block script %}
+    <script src="/scripts.js"></script>
+{% endblock script %}
+
+
+
+
+

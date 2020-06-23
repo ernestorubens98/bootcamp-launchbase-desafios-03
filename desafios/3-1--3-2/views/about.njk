@@ -1,0 +1,26 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+            <a href="/">
+                {{ about.img }}
+            </a>
+            <h1>{{ about.title }}</h1>
+            <a href="/" class="conteudo">Conteúdos</a>
+            <h2>{{ about.slogan }}</h2>
+        </div>
+    </header>
+    <section>
+        <div>
+            <ul>
+            {% for tecnologia in about.techs %}
+                <li>{{tecnologia}}</li>
+            {% endfor %}
+            </ul>
+
+            {% for link in about.links %}
+                {{link}}
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock content %}

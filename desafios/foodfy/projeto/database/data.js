@@ -131,5 +131,6 @@ module.exports = [
       'açúcar de confeiteiro e corte em quadrados.'
     ],
     information: ''
-  }
+  },
+  
 ];
